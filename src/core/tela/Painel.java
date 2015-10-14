@@ -126,7 +126,6 @@ public class Painel {
 		panelContacInfo.add(lblNomeDoContato);
 		
 		JButton btnSend = new JButton("Enviar");
-		btnSend.setHorizontalAlignment(SwingConstants.LEFT);
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
