@@ -39,6 +39,7 @@ public class Painel {
 					window.Chat.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+					
 				}
 			}
 		});
