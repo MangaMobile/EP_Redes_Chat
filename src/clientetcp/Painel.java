@@ -24,6 +24,9 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
+/*Tela de Conversa*/
+
 public class Painel {
 
 	private JFrame Chat;

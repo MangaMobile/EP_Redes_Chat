@@ -7,7 +7,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 
-
 public class ClienteTCP implements Runnable {
 	
 	private Socket cliente;
@@ -71,22 +70,28 @@ public class ClienteTCP implements Runnable {
 	
 	
 	public void run() {
+		/*Thread do client*/
+		
 		
 		try{
 		 	System.out.print("Digite a Porta:");
 			BufferedReader sc1 = new BufferedReader(new InputStreamReader(System.in));
+			//Le o que digita
 			String Porta = sc1.readLine();
 			String line = "";
 			int p1 = Integer.parseInt(Porta);
+			//Cria o socket para comunicação com o server
 			Socket c2 = new Socket("localhost",p1);
 			DataOutputStream ParaServer = new DataOutputStream(c2.getOutputStream());
 	        BufferedReader DoServer = new BufferedReader(new InputStreamReader(c2.getInputStream()));
 	        while(true){
 	        	if(line!=null){
+	        		//Lê as informações do server socket.
 	        		line=DoServer.readLine();
 		        	System.out.println(line);
 	        	}
 	        	else{
+	        		//Envia informações para o serverSocket
 	        		BufferedReader Digito1 = new BufferedReader(new InputStreamReader(System.in));
 	        		String Digito = Digito1.toString();
 	        		ParaServer.writeBytes(Digito);

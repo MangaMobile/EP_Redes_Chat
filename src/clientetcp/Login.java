@@ -16,6 +16,9 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 
+/*Tela de Login*/
+
+
 public class Login {
 
 	private JFrame frame;
@@ -109,16 +112,21 @@ public class Login {
 			System.exit(0);
 		}
 	}
+	
+	/*Ação do Botão OK*/
 	private class SwingAction_1 extends AbstractAction {
 		public SwingAction_1() {
 			putValue(NAME, "OK");
 			putValue(SHORT_DESCRIPTION, "Acessar Chat");
 		}
 		public void actionPerformed(ActionEvent e) {
+			/*Captura as informação do campo texto*/
 			String nome = textField.getText();
+			//Instância Cliente
 			ClienteTCP c1 = new ClienteTCP();
 			c1.NCliente =nome;
 			c1.main(c1);
+			//Instância o layout do painel
 			Painel p1 = new Painel();
 			p1.main();
 		}
